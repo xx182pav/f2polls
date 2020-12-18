@@ -1,0 +1,16 @@
+body{
+background: url(../images/DD0WY5cXkAAT-nm.jpg) no-repeat;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+h1, h3 {
+  color: #db3;
+}
+
+
+#home-content {
+  text-align: center;
+  padding-top: 5%;
+}

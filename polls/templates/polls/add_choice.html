@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class='text-center'>
+      {% if edit_mode %}
+        Изменить вариант
+      {% else %}
+        Добавить новый вариант
+      {% endif %}
+  </h1>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+          {{ field.errors }}
+          {{ field.label_tag }}
+          {{ field }}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Подтвердить" class='btn btn-primary'>
+        {% if edit_mode %}
+          <a href="{% url 'polls:choice_confirm_delete' choice.id %}"
+              class='btn btn-danger'>
+              <i class="far fa-trash-alt"></i> Удалить
+          </a>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
